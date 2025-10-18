@@ -65,12 +65,12 @@ const question3 = () => {
 }
 //                                              Задание 1.4 
                          // Напишите цикл, который выводит числа от 1 до 5 включительно.
-  let outputsNumber = () => {
-    let numberMin = 0                         
-    while(numberMin < 5){
-      console.log(++numberMin)
-    }
+let outputsNumber = () => {
+  let numberMin = 0                         
+  while(numberMin < 5){
+    console.log(++numberMin)
   }
+}
 //                                             Задание 1.5 
             // Напишите цикл for, который выводит квадратные числа от 1 до 10 (Например 1 4 9 16)
 
@@ -100,12 +100,12 @@ const question5 = () => {
 }
 
 let adminAccess = async (booleanTocen,  booleanAdmin) => {
-    if(booleanTocen || booleanAdmin){
-      console.log('Доступ разрешен')
-     }else {
-      console.log('Нет доступа')  
-    }
- };                                     // Задание 2.2
+  if(booleanTocen || booleanAdmin){
+    console.log('Доступ разрешен')
+  }else {
+    console.log('Нет доступа')  
+  }
+};                                     // Задание 2.2
 //Напиши выражение, которое вернёт true , если переменная x находиться в диапозоне от 10 до 20 включительно и не равна 15.
 // Проверь работу кода с несколькими значениями. 
                                        // Вариант №1
@@ -162,32 +162,31 @@ let rangeNumbers2 = (a, b, x) => {
 // Пользователь вводит число N. Используя while, выведи все числа от N до 0 в консоль.
                                             // Вариант №1. Цикл while
    
-  const question9 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите число ', (n) => {
-        while(Number(n) >= 0){
-          console.log(n)
-          n = n - 1
-        }
+const question9 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите число ', (n) => {
+      while(Number(n) >= 0){
+        console.log(n)
+        n = n - 1
+      }
+    resolve()
+  })})
+}
+                                            // Вариант №2 Числа вряд arr
+                                          
+const question10 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите число ', (n) => {
+      let arr = []
+      while(Number(n) >= 0){
+        arr.push(n)
+        n = n - 1
+      }
+      console.log(...arr)                  
       resolve()
     })
   })
- }
-                                            // Вариант №2 Числа вряд arr
-                                          
-  const question10 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите число ', (n) => {
-        let arr = []
-        while(Number(n) >= 0){
-          arr.push(n)
-          n = n - 1
-        }
-        console.log(...arr)                  
-        resolve()
-      })
-    })
-   }        
+}        
 
    //                                          Задание 2.4
    // Используя цикл for, вывести все числа от 1 ло 10, но 
@@ -195,17 +194,17 @@ let rangeNumbers2 = (a, b, x) => {
    // если число равно 9 - прерви цикл (break)
                                              // Вариант №1 цикл for
 
-  let rangeNumbersFor = () => {                                        
-   for(let u = 1; u < 10; u++){
-      if(u !==7 && u !== 9 ){
-       console.log(u)
-      }else if(u === 7){
-        continue
-      }else if(u === 9){
-        break
-      }
+let rangeNumbersFor = () => {                                        
+  for(let u = 1; u < 10; u++){
+    if(u !==7 && u !== 9 ){
+      console.log(u)
+    }else if(u === 7){
+      continue
+    }else if(u === 9){
+      break
     }
-  }     
+  }
+}     
                                             //  Задание 2.5
                                     // Вариант №1. Переребор по массиву
 // Задано три числа a,b,c
@@ -236,19 +235,19 @@ const question13 = () => {
 }
 
 let maxElement1 = (...maxNum) => {
-    for (let i = 0; i < maxNum.length; i++) { // В качесве сравнения в начале используеть 0 элемент массива 
-      if(maxNum[i] > maxNum[0]){ // Если число больше то, переставляем его в начало массива. И так все попорядку. 
-          maxNum[0] = maxNum[i]; // 
-      }
+  for (let i = 0; i < maxNum.length; i++) { // В качесве сравнения в начале используеть 0 элемент массива 
+    if(maxNum[i] > maxNum[0]){ // Если число больше то, переставляем его в начало массива. И так все попорядку. 
+      maxNum[0] = maxNum[i]; // 
     }
-    console.log(`Наибольший из трех отрезков = ${maxNum[0]}`)  // Возращаем нулевой о элемент массива. Что являеться максимальным в массве после прохождения цикла. 
   }
-                                                // Вариант №2 Библиотека Math 
+  console.log(`Наибольший из трех отрезков = ${maxNum[0]}`)  // Возращаем нулевой о элемент массива. Что являеться максимальным в массве после прохождения цикла. 
+}
+//                                            Вариант №2 Библиотека Math 
                                   
 let maxElement2 = (...arr) => console.log(`Наибольший из трех отрезков = ${Math.max(...arr)}`);  
 
-                                                // Вариант №3 
-                // С Использованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3)
+                                        
+//                                            Вариант №3  С Использованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3)
 let maxElement3 = (a, b, c) => {
   let number1 = a < b ? b : a;
   let number2 = b < c ? c : b;
@@ -256,7 +255,7 @@ let maxElement3 = (a, b, c) => {
   console.log(maxNumber)
 }
 
-//                                                Вариант №3 C использованием рекурсии
+//                                            Вариант №4 C использованием рекурсии (Ограниченый!!! Колличество вводимых параметров = 3)
 //                                    
 let maxElement4 = (a, b, c) => {
   if(a < b){
@@ -267,6 +266,19 @@ let maxElement4 = (a, b, c) => {
     return c
   }
 }
+ //                                           Вариант №5 C использованием рекурсии. Но ввода для любого колличества аргументов. 
+let maxElement5 = (arr) => {
+  if(arr.length === 1){
+    return arr[0];
+  }else if(arr[0] < arr[1]){
+    arr.splice(0, 1);
+    return f(arr);
+  } else {
+    arr.splice(1, 1);
+    return f(arr)
+  }
+}
+console.log(f([66, 7, 77, 786])) 
                                         // 3 Сложные 
                                         // Задание 3.1
 // Создай переменную temperature(в градусах Цельсия)
@@ -287,21 +299,21 @@ const question14 = () => {
 }
 
 let temperatureDetector1  = (temperature) => {
-    if(temperature < -30){
-        console.log("Оставайтесь дома!!!")
-    }else if(temperature <= -30 || temperature <= -10){
-        console.log("Сегодня холодно")
-    }else if(temperature <= -10 || temperature <= 5){
-        console.log("Не холодно")
-    }else if(temperature <= 5 || temperature <= 15){
-        console.log("Тепло")
-    }else if(temperature <= 15 || temperature <= 25){
-        console.log("Очень тепло")
-    }else if(temperature <= 25 || temperature <= 35){
-        console.log("Жарко")
-    }else{
-        console.log("Пекло")
-    }
+  if(temperature < -30){
+    console.log("Оставайтесь дома!!!")
+  }else if(temperature <= -30 || temperature <= -10){
+    console.log("Сегодня холодно")
+  }else if(temperature <= -10 || temperature <= 5){
+    console.log("Не холодно")
+  }else if(temperature <= 5 || temperature <= 15){
+    console.log("Тепло")
+  }else if(temperature <= 15 || temperature <= 25){
+    console.log("Очень тепло")
+  }else if(temperature <= 25 || temperature <= 35){
+    console.log("Жарко")
+  }else{
+    console.log("Пекло")
+  }
 }
 //                                    // Вариант второй. С использованием оператора ?
 let temperatureDetector2  = (temperature) => {
@@ -326,24 +338,24 @@ const question15 = () => {
       console.log(role)
       switch(role){
       case 'admin': 
-      console.log("Добро пожаловать, администратор!")
-      role = 'admin';
-      break
+        console.log("Добро пожаловать, администратор!")
+        role = 'admin';
+        break
       case 'manager': 
-      console.log("Привет, менеджер!")
-      role = 'manager';
-      break
+        console.log("Привет, менеджер!")
+        role = 'manager';
+        break
       case 'user': 
-      console.log("Рады видеть вас снова!")
-      role = 'user';
-      break
+        console.log("Рады видеть вас снова!")
+        role = 'user';
+        break
       case 'quest':
-      console.log("Пожалуйста, войдите в систему")
-      role = 'quest';
-      break
+        console.log("Пожалуйста, войдите в систему")
+        role = 'quest';
+        break
       default:
-      role = undefined    
-      console.log("Неправильно ввели роль!!!");
+        role = undefined    
+        console.log("Неправильно ввели роль!!!");
     }                                   
   resolve()
   })
@@ -355,46 +367,46 @@ const question15 = () => {
 //Оперделить на какой день количество автомобилей станет меньше M. 
 //Выведи результат в виле: "На X-й день количество машин стало меньше M"
 
-  const question16 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите число машин в автосалоне ', (cars) => {
-        resolve(Number(cars))
-      })
+const question16 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите число машин в автосалоне ', (cars) => {
+      resolve(Number(cars))
     })
-  }
+  })
+}
 
-  const question17 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите минимальное число машин которое должно остаться в автосолоне ', (cars) => {
-        resolve(Number(cars))
-      })
+const question17 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите минимальное число машин которое должно остаться в автосолоне ', (cars) => {
+      resolve(Number(cars))
     })
-  }
+  })
+}
   
-  let numberCars1 = (number_Cars_Showroom, minimum_Number_Cars) => {
-    for(let i = 1; number_Cars_Showroom > minimum_Number_Cars; i++){
+let numberCars1 = (number_Cars_Showroom, minimum_Number_Cars) => {
+  for(let i = 1; number_Cars_Showroom > minimum_Number_Cars; i++){
     number_Cars_Showroom = Math.floor(number_Cars_Showroom / 2);
     if(number_Cars_Showroom < minimum_Number_Cars){
-        console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
+      console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
     }
- }
- }
+  }
+}
  
                                             //    Вариант №2 с помошью рекурсии
-  let numberCars2 = (number_Cars_Showroom, minimum_Number_Cars, i = 0) => {
-    if(number_Cars_Showroom < minimum_Number_Cars){
-        console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
-        return number_Cars_Showroom
-    } else {
-        return numberCars2(Math.floor(number_Cars_Showroom / 2), minimum_Number_Cars, ++i)
-    }
+let numberCars2 = (number_Cars_Showroom, minimum_Number_Cars, i = 0) => {
+  if(number_Cars_Showroom < minimum_Number_Cars){
+      console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
+      return number_Cars_Showroom
+  } else {
+      return numberCars2(Math.floor(number_Cars_Showroom / 2), minimum_Number_Cars, ++i)
+  }
 }
 // //                                      Вариант №3  С помошью логарифмической формулы 
 
-  let numberCars3 = (number_Cars_Showroom, minimum_Number_Cars) => {
-    let number = Math.ceil(Math.log2(number_Cars_Showroom/minimum_Number_Cars));
-    console.log(`На ${number}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${Math.floor(number_Cars_Showroom/(2**number))} машин`);                      
-  }
+let numberCars3 = (number_Cars_Showroom, minimum_Number_Cars) => {
+  let number = Math.ceil(Math.log2(number_Cars_Showroom/minimum_Number_Cars));
+  console.log(`На ${number}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${Math.floor(number_Cars_Showroom/(2**number))} машин`);                      
+}
 
 //                                                     Задание 3.4
 //Найти: 1)Год первого полёта человека в космос(1961)
@@ -405,21 +417,21 @@ const question15 = () => {
 // let dateIntervalMin = 1800
 // const yearSpaceGagarin = 1961
 
- const question18 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите начальную дату ', (dateMin) => {
-        resolve(Number(dateMin))
-      })
+const question18 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите начальную дату ', (dateMin) => {
+      resolve(Number(dateMin))
     })
-  }
+  })
+}
 
-  const question19 = () => {
-    return new Promise((resolve, reject) => {
-      rl.question('Введите конечную дату ', (dateMax) => {
-        resolve(Number(dateMax))
-      })
+const question19 = () => {
+  return new Promise((resolve, reject) => {
+    rl.question('Введите конечную дату ', (dateMax) => {
+       resolve(Number(dateMax))
     })
-  }
+  })
+}
 
 let SearchYears = (dateIntervalMaxLocale, dateIntervalMinLocale, dateIntervalMin) => {
   const yearSpaceGagarin = 1961
@@ -454,6 +466,7 @@ const main = async () => {
   console.log(`\t\t\t\tЗадание 1.5`)
   console.log(` Напишите цикл for, который выводит квадратные числа от 1 до 10 (Например 1 4 9 16).`)
   await outputSquareNumbers()
+//----------------------------------------------------------------------------------------------------
   console.log(`\t\t\t\tУровень второй. Умеренный`)
   console.log(`\t\t\t\tЗадание 2.1`)
   console.log(`Напиши код, который определяет, может ли пользователь войти на сайт:\n
@@ -488,13 +501,17 @@ const main = async () => {
   let segmentA = await question11();
   let segmentB = await question12();
   let segmentC = await question13();
+  console.log(`t\t\t\tВариант первый. Переребор по массиву`)  
   maxElement1(segmentA, segmentB, segmentC);
   console.log(`t\t\t\tВариант второй. С использованием библиотеки Math`)  
   maxElement2(segmentA, segmentB, segmentC);   
   console.log(`t\t\t\tВариант третий. \nС ипользованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3)`)
   maxElement3(segmentA, segmentB, segmentC); 
-  console.log(`t\t\t\tВариант четвертый. C использованием рекурсий`)
+  console.log(`t\t\t\tВариант третий. C использованием рекурсии (Ограниченый!!! Колличество вводимых параметров = 3)`)
   console.log(maxElement4(segmentA, segmentB, segmentC));
+  console.log(`t\t\t\tВариант четвертый. C использованием рекурсии. Но ввода для любого колличества аргументов. `)
+  console.log(maxElement5([segmentA, segmentB, segmentC]))
+//----------------------------------------------------------------------------------------------------
   console.log(`\t\t\t\tУровень третий. Сложный`)
   console.log(`\t\t\t\tЗадание 3.1`)
   console.log(`Создай переменную temperature(в градусах Цельсия)\n Выведи рекомендацию по температуре:`)

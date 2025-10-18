@@ -278,7 +278,6 @@ let maxElement5 = (arr) => {
     return f(arr)
   }
 }
-console.log(f([66, 7, 77, 786])) 
                                         // 3 Сложные 
                                         // Задание 3.1
 // Создай переменную temperature(в градусах Цельсия)
@@ -510,7 +509,7 @@ const main = async () => {
   console.log(`t\t\t\tВариант третий. C использованием рекурсии (Ограниченый!!! Колличество вводимых параметров = 3)`)
   console.log(maxElement4(segmentA, segmentB, segmentC));
   console.log(`t\t\t\tВариант четвертый. C использованием рекурсии. Но ввода для любого колличества аргументов. `)
-  console.log(maxElement5([segmentA, segmentB, segmentC]))
+  console.log(maxElement5([segmentA, segmentB, segmentC]));
 //----------------------------------------------------------------------------------------------------
   console.log(`\t\t\t\tУровень третий. Сложный`)
   console.log(`\t\t\t\tЗадание 3.1`)

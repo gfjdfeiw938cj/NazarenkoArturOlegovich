@@ -12,11 +12,11 @@ console.log(`Напишите программу, которая спрашив�
 let age = prompt('Сколько вам лет?', '');        
 
 let ageRequest1 = (age) => {
-    if(age < 18){
-        console.log('Доступ запрещён!')
-    } else { 
-        console.log('Доступ разрешён!')
-    }
+  if(age < 18){
+    console.log('Доступ запрещён!')
+  } else { 
+   console.log('Доступ разрешён!')
+  }
 }                                         
 ageRequest1(age)  
                                                // Задание 1.2 
@@ -39,23 +39,23 @@ console.log(`Напишите код, тороый принимает через
              Если введено число вне диапазона - выведи "Ошибка: такого дня нет `)                         
 let DayWeekNumber = prompt('Введите (число от 1 до 7) определяющий день недели?', '');    
 let determineDayWeek = (DayWeekNumber) => { 
-    switch(Number(DayWeekNumber)){
-      case 1: console.log('Понедельник');
-        break
-      case 2: console.log('Вторник');
-        break
-      case 3: console.log('Cреда');
-        break
-      case 4: console.log('Четверг');
-        break
-      case 5: console.log('Пятница');
-        break
-      case 6: console.log('Суббота');
-        break
-      case 7: console.log('Воскресенье');
-        break
-      default: console.log('Ошибка такого дня нет!!!');
-    }
+  switch(Number(DayWeekNumber)){
+    case 1: console.log('Понедельник');
+      break
+    case 2: console.log('Вторник');
+      break
+    case 3: console.log('Cреда');
+      break
+    case 4: console.log('Четверг');
+      break
+    case 5: console.log('Пятница');
+      break
+    case 6: console.log('Суббота');
+      break
+    case 7: console.log('Воскресенье');
+      break
+    default: console.log('Ошибка такого дня нет!!!');
+  }
 }
 determineDayWeek(DayWeekNumber)
     //                                         Задание 1.4 
@@ -90,11 +90,11 @@ console.log(`Напиши код, который определяет, може�
 let isAdmin = prompt('Вы админ? Ответьте должен быть да или нет', '');   
 let isToken = prompt('У вас есть токен? Ответ должен быть да или нет', '');   
 let adminAccess = (isAdmin,  isToken) => {
-    if(isAdmin === 'да' || isToken === 'да'){
-      console.log('Доступ разрешен')
-    } else {
-      console.log('Нет доступа')  
-    }
+  if(isAdmin === 'да' || isToken === 'да'){
+    console.log('Доступ разрешен')
+  } else {
+    console.log('Нет доступа')  
+  }
 };  
 adminAccess(isAdmin, isToken)                                   // Задание 2.2
 //Напиши выражение, которое вернёт true , если переменная x находиться в диапозоне от 10 до 20 включительно и не равна 15.
@@ -150,12 +150,12 @@ outputNumbers1(N)
                                             // Вариант №2 Числа вряд arr
 console.log(`Вариант №2 Числа вряд`)                                          
 let outputNumbers2 = (n) => {
-    let arr = []
-    while(Number(n) >= 0){
-        arr.push(n)
-        n = n - 1
-    }
-    console.log(...arr)                  
+  let arr = []
+  while(Number(n) >= 0){
+    arr.push(n)
+    n = n - 1
+  }
+  console.log(...arr)                  
 }        
 
    //                                          Задание 2.4
@@ -206,8 +206,7 @@ console.log(`t\t\t\tВариант второй. С использованием
 let maxElement2 = (...arr) => console.log(`Наибольший из трех отрезков = ${Math.max(...arr)}`);  
 maxElement2(Number(segmentA), Number(segmentB), Number(segmentC))
 
-                                                // Вариант №3 
-                // С Использованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3)
+//                                                 Вариант №3 С Использованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3) 
 console.log(`t\t\t\tВариант третий. \nС ипользованием условия ветлений (Ограниченый!!! Колличество вводимых параметров = 3)`)
 let maxElement3 = (a, b, c) => {
   let number1 = a < b ? b : a;
@@ -216,7 +215,7 @@ let maxElement3 = (a, b, c) => {
   console.log(maxNumber)
 }
 maxElement3(Number(segmentA), Number(segmentB), Number(segmentC))
-//                                                Вариант №3 C использованием рекурсии
+//                                                Вариант №4 C использованием рекурсии
 // 
 console.log(`t\t\t\tВариант четвертый. C использованием рекурсий`)                                   
 let maxElement4 = (a, b, c) => {
@@ -229,6 +228,20 @@ let maxElement4 = (a, b, c) => {
   }
 }
 maxElement4(Number(segmentA), Number(segmentB), Number(segmentC))
+ //                                             Вариант №5 C использованием рекурсии. Но ввода для любого колличества аргументов.
+let maxElement5 = (arr) => {
+  if(arr.length === 1){
+    return arr[0];
+  }else if(arr[0] < arr[1]){
+    arr.splice(0, 1);
+    return f(arr);
+  } else {
+    arr.splice(1, 1);
+    return f(arr)
+  }
+}
+
+maxElement5([Number(segmentA), Number(segmentB), Number(segmentC)])
                                         // 3 Сложные 
                                         // Задание 3.1
 // Создай переменную temperature(в градусах Цельсия)
@@ -242,21 +255,21 @@ console.log(`Создай переменную temperature(в градусах �
 let temperature = prompt('Введите числовое значение температуры.', '');
 
 let temperatureDetector1  = (temperature) => {
-    if(temperature < -30){
-        console.log("Оставайтесь дома!!!")
-    }else if(temperature <= -30 || temperature <= -10){
-        console.log("Сегодня холодно")
-    }else if(temperature <= -10 || temperature <= 5){
-        console.log("Не холодно")
-    }else if(temperature <= 5 || temperature <= 15){
-        console.log("Тепло")
-    }else if(temperature <= 15 || temperature <= 25){
-        console.log("Очень тепло")
-    }else if(temperature <= 25 || temperature <= 35){
-        console.log("Жарко")
-    }else{
-        console.log("Пекло")
-    }
+  if(temperature < -30){
+    console.log("Оставайтесь дома!!!")
+  }else if(temperature <= -30 || temperature <= -10){
+    console.log("Сегодня холодно")
+  }else if(temperature <= -10 || temperature <= 5){
+    console.log("Не холодно")
+  }else if(temperature <= 5 || temperature <= 15){
+    console.log("Тепло")
+  }else if(temperature <= 15 || temperature <= 25){
+    console.log("Очень тепло")
+  }else if(temperature <= 25 || temperature <= 35){
+    console.log("Жарко")
+  }else{
+    console.log("Пекло")
+  }
 }
 temperatureDetector1(Number(temperature))
 
@@ -286,26 +299,26 @@ console.log(`Пусть есть переменная role, принимающа
     C помощью switch выведи персонализированное сообщение, например: let role `)
 let role = prompt('Введите вашу роль.', '');
 const defineRoles = (role) => {
-    switch(role){
-      case 'admin': 
-        console.log("Добро пожаловать, администратор!")
-        role = 'admin';
-        break
-      case 'manager': 
-        console.log("Привет, менеджер!")
-        role = 'manager';
-        break
-      case 'user': 
-        console.log("Рады видеть вас снова!")
-        role = 'user';
-        break
-      case 'quest':
-        console.log("Пожалуйста, войдите в систему")
-        role = 'quest';
-        break
-      default:
-        role = undefined    
-        console.log("Неправильно ввели роль!!!");
+  switch(role){
+    case 'admin': 
+      console.log("Добро пожаловать, администратор!")
+      role = 'admin';
+      break
+    case 'manager': 
+      console.log("Привет, менеджер!")
+      role = 'manager';
+      break
+    case 'user': 
+      console.log("Рады видеть вас снова!")
+      role = 'user';
+      break
+    case 'quest':
+      console.log("Пожалуйста, войдите в систему")
+      role = 'quest';
+      break
+    default:
+      role = undefined    
+      console.log("Неправильно ввели роль!!!");
     }                                   
 }
 defineRoles(role)
@@ -324,12 +337,12 @@ let number_Cars_Showroom = prompt('Введите число машин в ав�
 let minimum_Number_Cars = prompt('Введите минимальное число машин которое должно остаться в автосолоне.', '');  
 
 let calculateNumberCars1 = (number_Cars_Showroom, minimum_Number_Cars) => {
-    for(let i = 1; number_Cars_Showroom > minimum_Number_Cars; i++){
-      number_Cars_Showroom = Math.floor(number_Cars_Showroom / 2);
-      if(number_Cars_Showroom < minimum_Number_Cars){
-        console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
-       }
+  for(let i = 1; number_Cars_Showroom > minimum_Number_Cars; i++){
+    number_Cars_Showroom = Math.floor(number_Cars_Showroom / 2);
+    if(number_Cars_Showroom < minimum_Number_Cars){
+      console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
     }
+  }
 }
 calculateNumberCars1(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
  
@@ -337,20 +350,20 @@ calculateNumberCars1(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
 console.log('\t\t\t\tВариант второй. С использованием рекурсии')
 
 let calculateNumberCars2 = (number_Cars_Showroom, minimum_Number_Cars, i = 0) => {
-    if(number_Cars_Showroom < minimum_Number_Cars){
-        console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
-        return number_Cars_Showroom
-    } else {
-        return calculateNumberCars2(Math.floor(number_Cars_Showroom / 2), minimum_Number_Cars, ++i)
-    }
+  if(number_Cars_Showroom < minimum_Number_Cars){
+    console.log(`На ${i}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${number_Cars_Showroom} машин`)
+    return number_Cars_Showroom
+  } else {
+    return calculateNumberCars2(Math.floor(number_Cars_Showroom / 2), minimum_Number_Cars, ++i)
+  }
 }
 calculateNumberCars2(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
 //                                     Вариант №3  С помошью логарифмической формулы 
 console.log('\t\t\t\tВариант третий. С использованием логарифмической формулы')
 
 let calculateNumberCars3 = (number_Cars_Showroom, minimum_Number_Cars) => {
-    let number = Math.ceil(Math.log2(number_Cars_Showroom/minimum_Number_Cars));
-    console.log(`На ${number}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${Math.floor(number_Cars_Showroom/(2**number))} машин`);                      
+  let number = Math.ceil(Math.log2(number_Cars_Showroom/minimum_Number_Cars));
+  console.log(`На ${number}-й день количество машин стало меньше ${minimum_Number_Cars}. Всего осталось ${Math.floor(number_Cars_Showroom/(2**number))} машин`);                      
 }
 calculateNumberCars3(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
 //                                                     Задание 3.4
@@ -361,8 +374,8 @@ calculateNumberCars3(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
 // let dateIntervalMax = 2020
 // let dateIntervalMin = 1800
 // const yearSpaceGagarin = 1961
- console.log(`\t\t\t\tЗадание 3.4`)
- console.log(` Найти: 1)Год первого полёта человека в космос(1961) \n
+console.log(`\t\t\t\tЗадание 3.4`)
+console.log(` Найти: 1)Год первого полёта человека в космос(1961) \n
                       2)Количество високосных лет между 1800 и 2020г \n
                       Исрользуя цикл for и счётчик интераций.`)
 let dateMin = prompt('Введите начальную дату.', '');

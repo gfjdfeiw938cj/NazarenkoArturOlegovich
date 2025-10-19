@@ -394,4 +394,4 @@ let SearchYears = (dateIntervalMaxLocale, dateIntervalMinLocale, dateIntervalMin
       }
     }
 }
-SearchYears(Number(dateMax), Number(dateMax))
+SearchYears(Number(dateMax), Number(dateMin))

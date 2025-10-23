@@ -28,7 +28,7 @@ let sumTo3 = (n) => {
   if(n === 0){
     return 0
   }else{
-    return n + countEven(n - 1) 
+    return n + sumTo3(n - 1) 
   }
  
 }
@@ -142,7 +142,6 @@ let factorial3 = (n) => {
   return n * countEven3(n - 1);
   //  x === 0 ? 1 : x * factorial2(x-1)        
 }
-
 console.log(factorial3(5));
 
                       console.log('\t\t\t\t Задание 1.5')
@@ -187,18 +186,40 @@ console.log(` Числа в диапазоне \n
               (включительно).\n
               Пример: printRange(3, 7) → 3 4 5 6 7`)   
 
+                      console.log('\t\t\t\t Вариант №1')
+
 let printRange = (start, end) => {
   for(let i = start; i <= end; i++){
     console.log(i)
   }
 }
-printRange(4,7)
-                      console.log('\t\t\t\t Задание 2.2')
-                      console.log('\t\t\t\t Вариант №1')
+printRange(3,7)
 
+                      console.log('\t\t\t\t Вариант №2')
+
+let printRange2 = (start, end) => console.log([...Array(end - start + 1)].map((el, ind) => start + ind))
+printRange2(3,7)
+
+                      console.log('\t\t\t\t Вариант №3')
+
+let printRange3 = (start, end, arr = []) => {
+  if(end === start){
+    arr.push(start)
+    return console.log(arr.join(' ')) 
+  } else {
+    arr.push(start)
+    return printRange3(start + 1 , end, arr)
+  }
+}
+printRange3(3, 7)                      
+
+                      console.log('\t\t\t\t Задание 2.2')
+                
 console.log(`Подсчёт цифр \n
              Функция countDigits(num) возвращает, сколько цифр в числе num.\n
              Пример: countDigits(12345) → 5`) 
+
+                      console.log('\t\t\t\t Вариант №1')
 
 let countDigits1 = (num) => {
  let strLength = String(num).length
@@ -220,8 +241,13 @@ let countDigits2 = (num) => {
     }
   }
 }
-
 countDigits2(434555656456456)
+
+                      console.log('\t\t\t\t Вариант №3')
+
+let countDigits3 = (num) => console.log([...Array(String(num).length)].map((el, ind) => ind + 1).length)
+countDigits3(434555656456456)
+
                       console.log('\t\t\t\t Задание 2.3')
                       console.log('\t\t\t\t Вариант №1') 
 
@@ -461,6 +487,7 @@ let firstDigit = (number) => {
     }
   }
 }
+firstDigit(9876)
                         console.log('\t\t\t\t Вариант №2')  
                                          
 let firstDigit2 = (number) => {
@@ -471,10 +498,10 @@ let firstDigit2 = (number) => {
     } 
   }
 }
-firstDigit2(4030400770066)
+firstDigit2(9876)
 
                         console.log('\t\t\t\t Вариант №3') 
-//                                           
+                                           
 let firstDigit3 = (number) => {
   if(number <= 9){
     return number
@@ -482,12 +509,12 @@ let firstDigit3 = (number) => {
     return firstDigit3(parseInt(number / 10))
   }
 }
-firstDigit3(4030400770066)
+firstDigit3(9876)
 
                         console.log('\t\t\t\t Вариант №4') 
 
 let firstDigit4 = (number) => console.log(Number(String(number)[String(number).length - 1]))  
-firstDigit4(4030400770066)
+firstDigit4(9876)
 
                         console.log('\t\t\t\t Задание 4.4') 
                      

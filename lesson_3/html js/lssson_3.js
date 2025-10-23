@@ -347,6 +347,7 @@ let calculateNumberCars1 = (number_Cars_Showroom, minimum_Number_Cars) => {
 calculateNumberCars1(Number(number_Cars_Showroom), Number(minimum_Number_Cars))
  
                                             //    Вариант №2 с помошью рекурсии
+                                            
 console.log('\t\t\t\tВариант второй. С использованием рекурсии')
 
 let calculateNumberCars2 = (number_Cars_Showroom, minimum_Number_Cars, i = 0) => {

@@ -345,9 +345,9 @@ let fibonacc2 = (n, i = 0, j = 1) => {
     return fibonacc2(n - 2, i = i + j, j + i)
   }
 }
-fibonacc2(3)
+fibonacc2(6)
 
-                      console.log('\t\t\t\t Вариант №2. В обратном порядке, передаем число фибоначчи получаем его номер.')
+                      console.log('\t\t\t\t Вариант №2. В обратном порядке, передаем число фибоначчи и получаем его номер.')
 
 let fibonacc3 = (n, i = 0, j = 1, p = 0, arr = []) => {
   if(n === j || n === i){
@@ -361,11 +361,14 @@ let fibonacc3 = (n, i = 0, j = 1, p = 0, arr = []) => {
   }
 }
 fibonacc3(13)
+
                       console.log('\n\t\t\t\t Задание 3.2') 
-                      console.log('\t\t\t\t Вариант №1')  
+                     
 console.log(` Реверс числа\n
               Функция reverseNumber(num) возвращает число в обратном порядке цифр.\n
               Пример: reverseNumber(1234) → 4321`)  
+
+                      console.log('\t\t\t\t Вариант №1')  
 
 function reverseNumber1(num){
   let stringNumber = String(num)
@@ -389,6 +392,9 @@ console.log(` Проверка на палиндром\n
                         console.log('\t\t\t\t Вариант №1')  
 
 const isPalindrome1 = (text, str1 = '', str2 = '') => {
+  if(typeof text !== 'string') {
+    return console.log('Строка не должна быть пустой!!');
+  }
   for(let i = 0; i < text.length; i++){
     if(i <= text.length / 2 - 1){
       str2 =  str2 + text[(Math.floor(text.length / 2) - 1) - i]

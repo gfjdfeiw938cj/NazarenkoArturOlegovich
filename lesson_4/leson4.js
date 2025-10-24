@@ -277,6 +277,8 @@ console.log(`Таблица умножения \n
               ' ... \n '
               ' 3 × 10 = 30 ' `)                                
 
+                      console.log('\t\t\t\t Вариант №1')
+
 let printTable = (n) => {
   for(let i = 1; i <= 10; i++){
     console.log(`${n} × ${i} = ${n * i}`)
@@ -284,27 +286,70 @@ let printTable = (n) => {
 }
 printTable(5)
 
+                      console.log('\t\t\t\t Вариант №2')
+
+let printTable2 = (n) => [...Array(10)].map((el, ind) => `${n} × ${ind + 1} = ${n * (ind + 1)}`).forEach( el => console.log(el))  
+printTable2(3)   
+
                       console.log('\t\t\t\t Задание 2.5')
 
 console.log(`Обратный отсчёт \n
              Функция countdown(from) выводит все числа от from до 1..\n
              Пример: countdown(5) → 5 4 3 2 1 \n`) 
 
+                      console.log('\t\t\t\t Вариант №1')
+
 let countdown = (from) => {
   for(let i = from; 1 <= i; i--){
     console.log(`${i}`)
   }
 }
-countdown(6)
+countdown(5)
+
+                      console.log('\t\t\t\t Вариант №2')
+
+let countdown2 = (n) => console.log(...[...Array(n)].map((el, ind) => n - ind)) 
+countdown2(5) 
 
                       console.log('\t\t\t\t Сложный уровень')                       
                       console.log('\t\t\t\t Задание 3.1') 
 
 console.log(` Числа Фибоначчи\n
               Функция fibonacci(n) возвращает n-е число Фибоначчи.\n
-              Пример: fibonacci(6) → 8\n`)                           
+              Пример: fibonacci(6) → 8\n`) 
+              
+                      console.log('\t\t\t\t Вариант №1')
 
-function fibonacci(n, i = 0, j = 1, p = 0, arr = []){
+let fibonacci = (n) => {
+  for(let acc = 0, i = 1, j = 0, arr = []; arr.length <= n; ){
+    acc = i + j;
+    i = acc;
+    j = i + j;
+    arr.push(...[i,j]);
+    if( arr.length >= n && n % 2 === 0){
+      return console.log(arr[arr.length - 1]);
+    }else if(arr.length >= n && n % 2 !== 0){
+      return console.log(arr[arr.length - 2]);
+    }
+  }
+}
+fibonacci(6)
+
+                      console.log('\t\t\t\t Вариант №2')
+
+let fibonacc2 = (n, i = 0, j = 1) => {
+  if(n === 0 || n === 1){
+    let number =  n === 0 ? i : j
+    return console.log(number)  
+  }else{
+    return fibonacc2(n - 2, i = i + j, j + i)
+  }
+}
+fibonacc2(3)
+
+                      console.log('\t\t\t\t Вариант №2. В обратном порядке, передаем число фибоначчи получаем его номер.')
+
+let fibonacc3 = (n, i = 0, j = 1, p = 0, arr = []) => {
   if(n === j || n === i){
     let number =  n === j ? 2 : 1
     arr.push([i,j])
@@ -312,10 +357,10 @@ function fibonacci(n, i = 0, j = 1, p = 0, arr = []){
     return console.log(` ${p*2 + number - 1} число Фибоначчи из последовательного ряда ${arr.flat().join(' ')}`)
   }else{
     arr.push([i,j])
-    return fibonacci(n, i = i + j, j + i, p + 1, arr)
+    return fibonacc3(n, i = i + j, j + i, p + 1, arr)
   }
 }
-fibonacci(13)
+fibonacc3(13)
                       console.log('\n\t\t\t\t Задание 3.2') 
                       console.log('\t\t\t\t Вариант №1')  
 console.log(` Реверс числа\n

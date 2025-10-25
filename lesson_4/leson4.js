@@ -478,10 +478,11 @@ let sumAllNumbers = () => {
 }
 sumAllNumbers()
                         console.log('\t\t\t\t Задание 4.2') 
-                        console.log('\t\t\t\t Вариант №1')  
-
+                 
 console.log(` Подсчёт количества нулей в числе\n
               Пример: countZeros(10020) → 3\n`)   
+
+                        console.log('\t\t\t\t Вариант №1')  
 
 let countZeros = (number) => {
   for(let i = 0, j = 0; 1 < String(number).length; i++){

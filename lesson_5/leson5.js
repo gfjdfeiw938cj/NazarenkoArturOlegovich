@@ -62,7 +62,7 @@ console.log(`\nЗадание 2: Реализовать функцию кото�
  записан n элемент переданной строки, если в верхнем то вернуть true, в
  противном случае вернуть false.\n`)             
 
-                                console.log('\nРешение 1\n')
+                                console.log('\n\t\t\t\Решение 1\n')
 
 function determinantRegisterText(ElemStr, text){
   if(text[ElemStr] === text[ElemStr].toUpperCase()){
@@ -75,7 +75,7 @@ function determinantRegisterText(ElemStr, text){
 }  
 determinantRegisterText(0,'Строка Строка Строка')
 
-                                console.log('\nРешение 2\n')
+                                console.log('\n\t\t\tРешение 2\n')
 
 function determinantRegisterText2(text){
   let arr = []
@@ -99,7 +99,7 @@ function determinantRegisterText2(text){
 } 
 determinantRegisterText2('Строка Строка Строка')
 
-                                console.log('\nРешение 3\n')
+                                console.log('\n\t\t\tРешение 3\n')
 
 function determinantRegisterText3(text){
   let arr = [[],[]]
@@ -124,7 +124,7 @@ determinantRegisterText3('Овввы Рвв РР Р ыыы йуРТт')
 console.log(`\nЗадание 3: Реализовать функцию которая заменяет в строке str, все вхождения
  подстроки find, на подстроку replace.\n`)   
 
-                                console.log('\nРешение 1\n')
+                                console.log('\n\t\t\tРешение 1\n')
 
 function replacingSubstrings(strFind, strReplacing, text) {
   let changeText
@@ -137,7 +137,7 @@ function replacingSubstrings(strFind, strReplacing, text) {
 }
 replacingSubstrings('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
-                                console.log('\nРешение 2\n')
+                                console.log('\n\t\t\tРешение 2\n')
 
 function replacingSubstrings2(strFind, strReplacing, text){
   let regexp = new RegExp(`${strFind}`,'gi');
@@ -147,4 +147,4 @@ function replacingSubstrings2(strFind, strReplacing, text){
 replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
                                 console.log('\n Задание 1')
-                                console.log('Решение 2. Генерация рандомных чисел в определенном диапазоне за 5 сек.\n')
+                                console.log('\t\t\tРешение 2.(Генерация рандомных чисел в определенном диапазоне за 5 сек.)\n')

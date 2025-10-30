@@ -1,4 +1,5 @@
-                    console.log(' \t\t Практика 1' )
+                                                          console.log('\t\t Практика 1' )
+
 //  1) Создайте объект myFavoriteFilm, описывающий ваш любимый фильм.
 //  Объект должен содержать свойства с названием фильма, с датой
 //  выпуска, именем режиссера и страной выпуска.
@@ -27,7 +28,9 @@ myFavoriteFilm['Выыести название фильма из obg = myFavori
 delete myFavoriteFilm["Дата выпуска"]
 
 console.log(myFavoriteFilm)
-                  console.log(' \t\t Практика 2' )
+
+                                                          console.log('\t\t Практика 2' )
+
 //  Практика
 //  1) Реализовать функцию которая будет принимать числовой диапазон в
 //  качестве параметров [min, max] и будет возвращать случайное целое
@@ -38,22 +41,28 @@ console.log(myFavoriteFilm)
 //  3) Реализовать функцию которая заменяет в строке str, все вхождения
 //  подстроки find, на подстроку replace.
 
-                                console.log('Задание 1')
-                                console.log('Первый способ\n')
+ console.log(`Задание 1: Реализовать функцию которая будет принимать числовой диапазон в
+ качестве параметров [min, max] и будет возвращать случайное целое
+ число из данного диапазона.\n`)
                                 
+                                console.log('\t\tРешение 1\n')
+
 function getRandomIntInclusive(min, max){
   return console.log(Math.floor(Math.random() * (max - min + 1) + min))  
 }
 getRandomIntInclusive(4, 6)
-                                           //Второй способ
+                                      //Второй вариант. Асинхронный
 function getRandomIntInclusive2(min, max) {
   let timerId = setInterval(() => console.log(Math.floor(Math.random() * (max - min + 1) + min)), 500);
   setTimeout(() => {clearInterval(timerId); console.log('Стоп'); }, 5000);
 };
 getRandomIntInclusive2(4,7)
                                
-                                console.log('\n Задание 2')
-                                console.log('Первый способ \n')
+console.log(`\nЗадание 2: Реализовать функцию которая будет определять, в каком регистре
+ записан n элемент переданной строки, если в верхнем то вернуть true, в
+ противном случае вернуть false.\n`)             
+
+                                console.log('\nРешение 1\n')
 
 function determinantRegisterText(ElemStr, text){
   if(text[ElemStr] === text[ElemStr].toUpperCase()){
@@ -66,7 +75,7 @@ function determinantRegisterText(ElemStr, text){
 }  
 determinantRegisterText(0,'Строка Строка Строка')
 
-                                console.log('\n Второй способ \n')
+                                console.log('\nРешение 2\n')
 
 function determinantRegisterText2(text){
   let arr = []
@@ -90,11 +99,11 @@ function determinantRegisterText2(text){
 } 
 determinantRegisterText2('Строка Строка Строка')
 
-                                console.log('\n Третий способ \n')
+                                console.log('\nРешение 3\n')
 
 function determinantRegisterText3(text){
   let arr = [[],[]]
-  text.split().forEach((el, ind) => {
+  text.split('').forEach((el, ind) => {
     if(text[ind] === text[ind].toUpperCase() && text[ind] !== " "){
       arr[0].push(el); arr[1].push(ind);
     }
@@ -112,8 +121,10 @@ determinantRegisterText3('Овввы Рвв РР Р ыыы йуРТт')
 
 // alert("Хо-Хо-хо".replace(/хо/gi, (match, offset) => offset)); // 0-3-6
 
-                                console.log('\n Задание 3')
-                                console.log('Первый способ\n')
+console.log(`\nЗадание 3: Реализовать функцию которая заменяет в строке str, все вхождения
+ подстроки find, на подстроку replace.\n`)   
+
+                                console.log('\nРешение 1\n')
 
 function replacingSubstrings(strFind, strReplacing, text) {
   let changeText
@@ -126,7 +137,7 @@ function replacingSubstrings(strFind, strReplacing, text) {
 }
 replacingSubstrings('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
-                                console.log('\n Второй способ \n')
+                                console.log('\nРешение 2\n')
 
 function replacingSubstrings2(strFind, strReplacing, text){
   let regexp = new RegExp(`${strFind}`,'gi');
@@ -136,4 +147,4 @@ function replacingSubstrings2(strFind, strReplacing, text){
 replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
                                 console.log('\n Задание 1')
-                                console.log('Второй способ. Генерация рандомных чисел в определенном диапазоне за 5 сек.\n')
+                                console.log('Решение 2. Генерация рандомных чисел в определенном диапазоне за 5 сек.\n')

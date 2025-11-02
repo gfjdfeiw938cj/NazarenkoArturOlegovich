@@ -149,7 +149,6 @@ function replacingSubstrings2(strFind, strReplacing, text){
 // replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
 async function main(){
-
   console.log(`Задание 1: Реализовать функцию которая будет принимать числовой диапазон в
   качестве параметров [min, max] и будет возвращать случайное целое
   число из данного диапазона.\n`)
@@ -188,7 +187,6 @@ async function main(){
 
   replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 }
-
 main()
 
 

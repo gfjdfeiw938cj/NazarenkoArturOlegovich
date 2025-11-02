@@ -20,10 +20,10 @@ console.log(myFavoriteFilm['Дата выпуска'])
 
 myFavoriteFilm['Выручки фильма в прокате'] = 'Нет информации'
 
-myFavoriteFilm['Выыести название фильма из obg = myFavoriteFilm'] = function Metod(){ console.log(this['Названием фильма'])}.bind(myFavoriteFilm)
+myFavoriteFilm['Вывести название фильма из obg = myFavoriteFilm'] = function Metod(){ console.log(this['Названием фильма'])}.bind(myFavoriteFilm)
                                     // Второй вариант 
 // myFavoriteFilm['Выыести название фильма из obg = myFavoriteFilm'] = () => console.log(myFavoriteFilm['Названием фильма'])
-myFavoriteFilm['Выыести название фильма из obg = myFavoriteFilm']()
+myFavoriteFilm['Вывести название фильма из obg = myFavoriteFilm']()
 
 delete myFavoriteFilm["Дата выпуска"]
 
@@ -41,28 +41,30 @@ console.log(myFavoriteFilm)
 //  3) Реализовать функцию которая заменяет в строке str, все вхождения
 //  подстроки find, на подстроку replace.
 
- console.log(`Задание 1: Реализовать функцию которая будет принимать числовой диапазон в
- качестве параметров [min, max] и будет возвращать случайное целое
- число из данного диапазона.\n`)
+//  console.log(`Задание 1: Реализовать функцию которая будет принимать числовой диапазон в
+//  качестве параметров [min, max] и будет возвращать случайное целое
+//  число из данного диапазона.\n`)
                                 
-                                console.log('\t\tРешение 1\n')
+//                                 console.log('\t\tРешение 1\n')
 
 function getRandomIntInclusive(min, max){
   return console.log(Math.floor(Math.random() * (max - min + 1) + min))  
 }
-getRandomIntInclusive(4, 6)
+// getRandomIntInclusive(4, 7)
                                       //Второй вариант. Асинхронный
 function getRandomIntInclusive2(min, max) {
-  let timerId = setInterval(() => console.log(Math.floor(Math.random() * (max - min + 1) + min)), 500);
-  setTimeout(() => {clearInterval(timerId); console.log('Стоп'); }, 5000);
+  return new Promise( (resolve) => {
+    let timerId = setInterval(() => console.log(Math.floor(Math.random() * (max - min + 1) + min)), 500);
+    setTimeout(() => {clearInterval(timerId); console.log('Стоп'); resolve()}, 5000);
+  })
 };
-getRandomIntInclusive2(4,7)
+// getRandomIntInclusive2(4, 7)
                                
-console.log(`\nЗадание 2: Реализовать функцию которая будет определять, в каком регистре
- записан n элемент переданной строки, если в верхнем то вернуть true, в
- противном случае вернуть false.\n`)             
+// console.log(`\nЗадание 2: Реализовать функцию которая будет определять, в каком регистре
+//  записан n элемент переданной строки, если в верхнем то вернуть true, в
+//  противном случае вернуть false.\n`)             
 
-                                console.log('\n\t\t\t\Решение 1\n')
+                                // console.log('\n\t\t\t\Решение 1\n')
 
 function determinantRegisterText(ElemStr, text){
   if(text[ElemStr] === text[ElemStr].toUpperCase()){
@@ -73,9 +75,9 @@ function determinantRegisterText(ElemStr, text){
     return false;
   }
 }  
-determinantRegisterText(0,'Строка Строка Строка')
+// determinantRegisterText(0,'Строка Строка Строка')
 
-                                console.log('\n\t\t\tРешение 2\n')
+                                // console.log('\n\t\t\tРешение 2\n')
 
 function determinantRegisterText2(text){
   let arr = []
@@ -97,9 +99,9 @@ function determinantRegisterText2(text){
     return true
   }
 } 
-determinantRegisterText2('Строка Строка Строка')
+// determinantRegisterText2('Строка Строка Строка')
 
-                                console.log('\n\t\t\tРешение 3\n')
+                                // console.log('\n\t\t\tРешение 3\n')
 
 function determinantRegisterText3(text){
   let arr = [[],[]]
@@ -117,14 +119,14 @@ function determinantRegisterText3(text){
     return true
   }
 }
-determinantRegisterText3('Овввы Рвв РР Р ыыы йуРТт')
+// determinantRegisterText3('Овввы Рвв РР Р ыыы йуРТт')
 
 // alert("Хо-Хо-хо".replace(/хо/gi, (match, offset) => offset)); // 0-3-6
 
-console.log(`\nЗадание 3: Реализовать функцию которая заменяет в строке str, все вхождения
- подстроки find, на подстроку replace.\n`)   
+// console.log(`\nЗадание 3: Реализовать функцию которая заменяет в строке str, все вхождения
+//  подстроки find, на подстроку replace.\n`)   
 
-                                console.log('\n\t\t\tРешение 1\n')
+                                // console.log('\n\t\t\tРешение 1\n')
 
 function replacingSubstrings(strFind, strReplacing, text) {
   let changeText
@@ -135,16 +137,60 @@ function replacingSubstrings(strFind, strReplacing, text) {
     console.log("Такой подстроки нет в тексте")
   }
 }
-replacingSubstrings('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
+// replacingSubstrings('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
-                                console.log('\n\t\t\tРешение 2\n')
+                                // console.log('\n\t\t\tРешение 2\n')
 
 function replacingSubstrings2(strFind, strReplacing, text){
   let regexp = new RegExp(`${strFind}`,'gi');
   let changeText = text.replace(regexp, strReplacing)
   changeText === text ? console.log("Такой подстроки нет в тексте") : console.log(`То что было: ${text}\nТо что стало: ${changeText}`)
 }  
-replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
+// replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
 
-                                console.log('\n Задание 1')
-                                console.log('\t\t\tРешение 2.(Генерация рандомных чисел в определенном диапазоне за 5 сек.)\n')
+async function main(){
+
+  console.log(`Задание 1: Реализовать функцию которая будет принимать числовой диапазон в
+  качестве параметров [min, max] и будет возвращать случайное целое
+  число из данного диапазона.\n`)
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000))
+  console.log('\t\tРешение 1\n')
+
+  getRandomIntInclusive(4, 7)
+
+  console.log('\t\t\tРешение 2.(Генерация рандомных чисел в определенном диапазоне за 5 сек.)\n')
+  await getRandomIntInclusive2(4, 7)
+
+  console.log(`\nЗадание 2: Реализовать функцию которая будет определять, в каком регистре
+  записан n элемент переданной строки, если в верхнем то вернуть true, в
+  противном случае вернуть false.\n`)  
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000))  
+  console.log('\n\t\t\t\Решение 1\n')
+
+  determinantRegisterText(0,'Строка Строка Строка')
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000)) 
+  console.log('\n\t\t\tРешение 2\n')
+
+  determinantRegisterText2('Строка Строка Строка')
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000)) 
+  console.log('\n\t\t\tРешение 3\n')
+
+  determinantRegisterText3('Овввы Рвв РР Р ыыы йуРТт')
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000)) 
+  console.log(`\nЗадание 3: Реализовать функцию которая заменяет в строке str, все вхождения
+  подстроки find, на подстроку replace.\n`) 
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000)) 
+  console.log('\n\t\t\tРешение 1\n')
+
+  replacingSubstrings('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
+  await new Promise(resolve => setTimeout(() => {resolve()}, 1000)) 
+  console.log('\n\t\t\tРешение 2\n')
+
+  replacingSubstrings2('Тихо', "Громко", 'Тихо, очень тихо падали листья на землю')
+}
+
+main()
+
+
+
+                              
